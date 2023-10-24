@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LOVE IS EVERYWHERE</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="png" sizes="16x16" href="favicon-16x16.png">
+    <style>
+      body {
+        text-align: center;
+        height: 88vh;
+      }
+
+      .container {
+        margin: 100px auto;
+        width: 300px;
+        position: relative;
+        z-index: 1;
+      }
+
+      h1 {
+        font-size: 24px;
+        width: fit-content;
+        margin-left: 30%;
+      }
+
+      .input-container {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      input[type="text"] {
+        width: 45%;
+        padding: 10px;
+        margin: 5px 5px;
+        cursor: text;
+        transition: background-color 5s ease-in-out; /* Transition for background color */
+      }
+
+      input[type="text"]:hover {
+        cursor: none;
+      }
+
+      input[type="submit"] {
+        margin-top: 5px;
+        padding: 0px 20px;
+        transition: background-color 5s ease-in-out; /* Transition for background color */
+        margin-bottom: 5px;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+        cursor: pointer;
+      }
+
+      /* Style the mouse image */
+      #mouse-img {
+        display: none;
+        position: absolute;
+        scale: 0.5;
+        top: 30%; /* Initial position near the submit button */
+        left: 50%; /* Initial position near the submit button */
+        transform: translate(-50%, -50%);
+        transition: all 5s ease-in-out; /* Adjust the duration and easing as needed */
+        z-index: 1;
+      }
+      .deleting-text {
+        position: absolute;
+        bottom: 10px;
+        right: 3px;
+        font-size: 24px;
+        color: black;
+        background: yellow;
+        opacity: 0;
+        z-index: 0;
+        transition: opacity 0s ease-in-out;
+      }
+
+      .ascii-art {
+        font-family: monospace;
+        color: white;
+      }
+      #art1 {
+        position: relative;
+        top: -300px;
+        right: 200px;
+      }
+
+      #art2 {
+        position: relative;
+        bottom: -10px;
+        margin-bottom: 0;
+      }
+
+      #art3 {
+        position: relative;
+        bottom: 330px;
+        left: 70px;
+      }
+
+      #art4 {
+        position: relative;
+        bottom: 800px;
+        left: 250px;
+        scale: 0.7;
+      }
+      #art5 {
+        position: relative;
+        bottom: 1020px;
+        right: 250px;
+        scale: 0.9 1.2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="h1">Love Meter</h1>
+      <div class="input-container">
+        <input
+          id="your_name"
+          type="text"
+          name="your_name"
+          placeholder="Your Name"
+        />
+        <input
+          id="lover_name"
+          type="text"
+          name="lover_name"
+          placeholder="Your Lover's Name"
+        />
+      </div>
+      <input type="submit" value="Submit" id="submit-button" />
+    </div>
+
+    <div id="art1" class="ascii-art">
+      <pre>
+        |\      _,,,---,,_
+        ZZZzz /,`.-'`'    -.  ;-;;,_
+             |,4-  ) )-,_. ,\ (  `'-'
+            '---''(_/--'  `-'\_) 
+        </pre
+      >
+    </div>
+
+    <div id="art2" class="ascii-art">
+      <pre>
+            _
+            _(_)_                          wWWWw   _          wWWWw   _
+@@@@       (_)@(_)   vVVVv     _     @@@@  (___) _(_)_  @@@@  (___) _(_)_
+@@()@@ wWWWw  (_)\    (___)   _(_)_  @@()@@   Y  (_)@(_)  @@()@@   Y  (_)@(_)
+@@@@  (___)     `|/    Y    (_)@(_)  @@@@   \|/   (_)\  @@@@   \|/   (_)\
+ /      Y       \|    \|/    /(_)    \|      |/      |    \|      |/      |
+\ |     \ |/       | / \ | /  \|/       |/    \|      \|/       |/    \|      \|/
+ \\|//   \\|///  \\\|//\\\|/// \|///  \\\|//  \\|//  \\\|//  \\\|//  \\|//  \\\|// 
+        </pre
+      >
+    </div>
+
+    <div id="art3" class="ascii-art">
+      <pre>
+    _  _
+    ( \/ )
+     .---.   \  /   .-"-. 
+    /   6_6   \/   / 4 4 \
+    \_  (__\       \_ v _/
+    //   \\        //   \\
+   ((     ))      ((     ))
+jgs=====""===""========""===""=======
+      |||            |||
+       |              |
+          </pre
+      >
+    </div>
+
+    <div id="art4" class="ascii-art">
+      <pre>
+            '
+            *          .
+                   *       '
+              *                *
+    
+    
+    
+    
+    
+    *   '*
+           *
+                *
+                       *
+               *
+                     *
+    
+         .                      .
+         .                      ;
+         :                  - --+- -
+         !           .          !
+         |        .             .
+         |_         +
+      ,  | `.
+    --- --+-<#>-+- ---  --  -
+      `._|_,'
+         T
+         |
+         !
+         :         . : 
+         .       *
+            </pre
+      >
+    </div>
+
+    <div id="art5" class="ascii-art">
+      <pre>
+            * *    
+            *    *  *
+       *  *    *     *  *
+      *     *    *  *    *
+  * *   *    *    *    *   *
+  *     *  *    * * .#  *   *
+  *   *     * #.  .# *   *
+   *     "#.  #: #" * *    *
+  *   * * "#. ##"       *
+    *       "###
+              "##
+               ##.
+               .##:
+               :###
+               ;###
+             ,####.
+ 
+        </pre
+      >
+    </div>
+
+    <!-- Add the mouse image -->
+    <img id="mouse-img" src="mouse.png" alt="Mouse" width="50" />
+
+    <script>
+      let audio;
+
+      // Function to play sound and return the audio object
+      function playSound(url, loop) {
+        const audio = new Audio(url);
+        audio.loop = loop;
+        audio.play();
+        return audio; // Return the audio object
+      }
+
+      // Function to stop the sound
+      function stopSound() {
+        if (audio) {
+          audio.pause(); // Pause the audio
+        }
+      }
+      document
+        .getElementById("submit-button")
+        .addEventListener("click", function () {
+          // Hide the mouse cursor for the entire page
+          document.documentElement.style.cursor = "none";
+
+          // Change the cursor style for the submit button and its hover state
+          document.getElementById("submit-button").style.cursor = "none";
+          document.getElementById("submit-button").style.pointerEvents = "none";
+          document.getElementById("your_name").style.pointerEvents = "none";
+
+          const deletingText = document.createElement("div");
+          deletingText.innerText = "delete?";
+          deletingText.classList.add("deleting-text");
+          document.body.appendChild(deletingText);
+
+          // Show the mouse image
+          const mouseImg = document.getElementById("mouse-img");
+          mouseImg.style.display = "block";
+
+          // Animate the image to the top left corner
+          setTimeout(function () {
+            mouseImg.style.top = "0";
+            mouseImg.style.left = "0";
+          }, 100); // A small delay before starting the animation
+
+          // Animate the image to the bottom right corner after a delay
+          setTimeout(function () {
+            mouseImg.style.top = "calc(100vh - 50px)";
+            mouseImg.style.left = "calc(100vw - 50px)";
+          }, 5200); // Adjust the timing to match the transition duration (5 seconds)
+
+          // Change the border  of elements
+          setTimeout(function () {
+            document.body.style.border = "3px solid blue";
+            audio = playSound("click.wav", false);
+          }, 5200);
+
+          setTimeout(function () {
+            document.querySelector("#your_name").style.border =
+              "3px solid blue";
+            audio = playSound("click.wav", false);
+          }, 7610);
+
+          //ASCII ARTvvvvvv
+          setTimeout(function () {
+            document.querySelector("#art1").style.color = "blue";
+            audio = playSound("click.wav", false);
+          }, 6500);
+
+          setTimeout(function () {
+            document.querySelector("#art5").style.color = "blue";
+            audio = playSound("click.wav", false);
+          }, 6700);
+
+          setTimeout(function () {
+            document.querySelector("#art3").style.color = "blue";
+            audio = playSound("click.wav", false);
+          }, 7800);
+
+          setTimeout(function () {
+            document.querySelector("#art4").style.color = "blue";
+            audio = playSound("click.wav", false);
+          }, 8300);
+
+          setTimeout(function () {
+            document.querySelector("#art2").style.color = "blue";
+            audio = playSound("click.wav", false);
+          }, 8900);
+          //ASCII ART^^^^^^
+
+          setTimeout(function () {
+            document.querySelector("#h1").style.border = "3px solid blue";
+            document.querySelector("#lover_name").style.border =
+              "3px solid blue";
+
+            document.querySelector("#submit-button").style.border =
+              "3px solid blue";
+
+            audio = playSound("click.wav", false);
+          }, 7720);
+
+          setTimeout(function () {
+            document.querySelector("#lover_name").style.border =
+              "3px solid blue";
+            audio = playSound("click.wav", false);
+          }, 7850);
+
+          setTimeout(function () {
+            document.body.style.border = "3px solid white";
+            document.body.innerHTML = ""; // This will remove all child elements of the body
+            deletingText.style.opacity = 0;
+            audio = playSound("click.wav", false);
+          }, 11900);
+
+          setTimeout(function () {
+            deletingText.style.opacity = 1;
+            audio = playSound("click.wav", false);
+          }, 10000);
+
+          setTimeout(function () {
+            audio = playSound("typing.mp3", false);
+          }, 12500);
+
+          // Create and display the text animation
+          setTimeout(function () {
+            const textContainer = document.createElement("div");
+            textContainer.classList.add("text-animation");
+            textContainer.style.color = "black";
+            textContainer.style.fontSize = "24px";
+            textContainer.style.position = "absolute";
+            textContainer.style.top = "50%";
+            textContainer.style.left = "50%";
+            textContainer.style.transform = "translate(-50%, -50%)";
+            document.body.appendChild(textContainer);
+
+            var initialText =
+              "what the hell are you doing? why do you want to know that?";
+            const finalText =
+              "what you are looking to measure with this meter already exists inside of you.";
+
+            let index = 0;
+            let isDeleting = false;
+            let text = "";
+
+            function animateText() {
+              textContainer.innerText = text;
+
+              if (isDeleting) {
+                stopSound();
+                if (text === "") {
+                  audio = playSound("typing.mp3", false);
+                  isDeleting = false;
+                  initialText = finalText;
+                  setTimeout(animateText, 500); // Pause before the final text
+                } else {
+                  text = initialText.substring(0, text.length - 1);
+                  setTimeout(animateText, 10); // Typing speed
+                }
+              } else {
+                if (text === initialText) {
+                  stopSound();
+                  isDeleting = true;
+                  setTimeout(animateText, 1500); // Pause before deletion
+                } else {
+                  text = initialText.substring(0, text.length + 1);
+                  setTimeout(animateText, 100); // Typing speed
+                }
+              }
+            }
+
+            animateText();
+          }, 12800);
+        });
+    </script>
+  </body>
+</html>
